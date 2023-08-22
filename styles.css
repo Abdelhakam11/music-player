@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: 'Pacifico', cursive;
+}
+.home-container{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom right,rgb(3, 0, 28,0.8),rgb(48, 30, 103,0.8)), url('./img/bg-1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+h1{
+    font-size:9rem;
+    text-align: center;
+    color: rgb(182, 234, 218);
+}
+.player-container{
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.image-container{
+    margin-top: 10rem;
+    position: relative;
+}
+.song-image{
+    width: 40rem;
+    height: 40rem;
+    border-radius: 50%;
+    padding: 0.5rem;
+    border: 10px solid rgb(182, 234, 218);
+    transition: transform 3s 0.2s;
+}
+.layer{
+    color: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40rem;
+    height: 40rem;
+    background-color: rgba(255, 253, 253, 0.144);
+    z-index: 999;
+    padding: 0rem;
+    border-radius: 50%;
+}
+.player-info{
+    text-align: center;
+    font-size: 2rem;
+    position: absolute;
+    top: 90%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    color: rgb(182, 234, 218);
+    transition: all 2s ;
+    opacity: 0;
+    visibility: hidden;
+}
+.image-container:hover .song-image{
+    transform: rotate(360deg) scale(1.1);
+}
+.image-container:hover .player-info{
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* Progress */
+.progress-container {
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 40px 20px;
+    height: 4px;
+    width: 90%;
+    color:rgb(182, 234, 218); ;
+  }
+  
+  .progress {
+    background:rgb(182, 234, 218);
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+  }
+  
+  .duration-wrapper {
+    position: relative;
+    top: -25px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Controls */
+  .player-controls {
+    position: relative;
+    margin: auto;
+
+  }
+  
+  .fas {
+    font-size: 30px;
+    color: rgb(129, 129, 129);
+    margin: 30px;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .fas:hover {
+    filter: brightness(80%);
+  }
+  
+  .main-button {
+    font-size: 40px;
+    position: relative;
+    top: 3px;
+  }
+  
+  /* Media Query: iPhone (Vertical) */
+  @media screen and (max-width: 376px) {
+    .player-container {
+      width: 95vw;
+    }
+  
+    .img-container {
+      left: 29px;
+    }
+  
+    h2 {
+      font-size: 20px;
+    }
+  
+    h3 {
+      font-size: 15px;
+    }
+  
+    .player-controls {
+      top: -10px;
+      left: 100px;
+    }
+  }
